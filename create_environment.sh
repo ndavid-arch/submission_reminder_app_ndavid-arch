@@ -31,7 +31,7 @@ echo "Assignment: $ASSIGNMENT"
 echo "Days remaining to submit: $DAYS_REMAINING days"
 echo "--------------------------------------------"
 
-check_submissions $submissions_file
+check_submissions "$submissions_file"
 EOL
 chmod +x "$REMINDER"
 fi
@@ -40,7 +40,7 @@ fi
 FUNCTION="$ParentDir/modules/functions.sh"
 if [ ! -s "$FUNCTION" ];then
 	cat <<'EOL' > "$FUNCTION"
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Function to read submissions file and output students who have not submitted
 function check_submissions {
@@ -60,6 +60,7 @@ function check_submissions {
             echo "Reminder: $student has not submitted the $ASSIGNMENT assignment!"
         fi
     done < <(tail -n +2 "$submissions_file") # Skip the header
+}
 EOL
 chmod +x "$FUNCTION"
 	fi
