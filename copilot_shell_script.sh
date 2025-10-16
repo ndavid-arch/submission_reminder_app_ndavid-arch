@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
+# Find the first directory in the current folder that matches "submission_reminder_*"
 ParentDir=$(find . -maxdepth 1 -type d -name "submission_reminder_*" | head -n 1)
 
+# This to Check if no directory was found
 if [ -z "$ParentDir" ]; then
-    echo "❌ Could not find any submission_reminder_* directory in the current folder."
+    echo "Could not find any submission_reminder_* directory in the current folder."
     exit 1
 fi
 CONFIG="$ParentDir/config/config.env"
@@ -23,6 +25,7 @@ echo "======================================"
 
 read -p "Enter your Choice:" new_assignment
 
+# Validate the user's input
 case "$new_assignment" in
     "Shell Navigation"|"Shell Basics"|"Git"|"Emacs"|"Vi")
         # valid assignment, do nothing
@@ -33,4 +36,5 @@ case "$new_assignment" in
         ;;
 esac
 
+# Update the ASSIGNMENT variable in the config.env file with the new assignment
 sed -i "s/^ASSIGNMENT=.*/ASSIGNMENT=\"$new_assignment\"/" "$CONFIG"
