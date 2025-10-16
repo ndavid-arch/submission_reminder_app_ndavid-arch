@@ -75,9 +75,9 @@ Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
 Divine, Shell Navigation, not submitted
 Anissa, Shell Basics, submitted
-Beni, loops in Linux, submitted
-Pacifique, Python Basics, not submitted
-Miracle, Advanced Python, submitted
+Beni, Git, submitted
+Pacifique, Shell Basics, not submitted
+Miracle, Shell Navigation, submitted
 Keza, Emacs, submitted
 Deborah, Vi, submitted
 EOL
