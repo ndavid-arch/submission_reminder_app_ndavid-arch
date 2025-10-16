@@ -1,4 +1,4 @@
-Submission Reminder App
+**Submission Reminder App**
 
 This application tracks student assignment submissions and alerts for pending tasks.
 
